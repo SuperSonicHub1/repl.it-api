@@ -146,7 +146,7 @@ module.exports = class {
     const { output, timedOut, listen, installStart, installOutput, installEnd } = listeners
 
     if (this.got.language === 'html') {
-      const { url } = await this.fetch('https://replbox.repl.it/data/web_project/pushroute', {
+      const { url } = await this.fetch('https://repl.it/data/web_project/pushroute', {
         method: 'POST',
         body: JSON.stringify({
           replId: this.got.id
