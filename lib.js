@@ -38,16 +38,8 @@ module.exports = class {
         polygott: false
       }),
       headers
-    }).then(parseJson)
-    if (potentialToken.message) {
-      if (potentialToken.name) {
-        throw new Error(`${potentialToken.name}: ${potentialToken.message}`)
-      } else {
-        throw new Error(potentialToken.message)
-      }
-    } else {
-      this.got.token = potentialToken
-    }
+    });
+    this.got.token = potentialToken.response
   }
 
   async loadFromPath(path) {
